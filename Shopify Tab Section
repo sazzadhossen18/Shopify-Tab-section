@@ -1,0 +1,308 @@
+<style>
+.tabcontent ul {
+  list-style: none;
+  padding: 0;
+}
+.tabcontent li {
+  padding-left: 1.3em;
+}
+.tabcontent {
+    display: none;
+    padding: 16px 12px;
+    border: 1px solid #none;
+    line-height: 1.5;
+}
+  
+.tabcontent li:before {
+  content: "\f00c"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.tabcontent ol, .tabcontent ul {
+    margin: 0 0 10px 20px;
+}
+.tab div {
+float: left;
+font-weight: 600;
+outline: none;
+cursor: pointer;
+border: 1px solid #edeef4;
+padding: 5px 25px;
+transition: 0.3s;
+font-size: 13.5px;
+color: #000000;
+background: #0000000d;
+text-align: center;
+text-transform: uppercase;
+margin: 5px;
+
+}
+
+.tab div:hover {
+  background-color: #dddddd24;
+  border-bottom: 1px solid black;
+  color:black;
+}
+
+.tab div.active {
+  background: black;
+  color:white;
+}
+
+.tabcontent {
+  display: none;
+      padding: 16px 12px;
+
+  border: 1px solid #none;
+  
+}
+  
+  @media screen and (max-width:780px){
+  
+  
+  .tab div {
+    float: left;
+    outline: none;
+    cursor: pointer;
+    border: 1 px solid #edeef4;
+    transition: 0.3s;
+    font-size: 10px;
+    width: 47%;
+    color: black;
+}
+  .tab {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  }
+  @media screen and (min-width:780px){
+  .tab-inner {
+    margin-left: 0%;
+    margin-right: 0%;
+
+  }
+  
+  
+  .tab {
+   overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+    
+  
+  }
+</style>
+
+<div class="tab-inner">
+
+<div class="tab">
+  
+  <div class="tablinks active" onclick="openTab(event, 'tab1')">Product Details</div>
+  
+  <div class="tablinks" onclick="openTab(event, 'tab2')">Shipping </div>  
+
+  <div class="tablinks" onclick="openTab(event, 'tab3')">Price Match</div>
+  
+  <div class="tablinks" onclick="openTab(event, 'tab4')">Our Guarantee</div> 
+  
+</div>
+
+<div id="tab1" class="tabcontent active" style="display: block;">
+{{ product.description }}
+</div>
+
+<div id="tab2" class="tabcontent" style="display: none;">
+
+
+  
+<h4>Order Confirmation</h4>
+ 
+
+
+<p>As soon as you place your order, you will receive an order confirmation e-mail. This means that we have received your order in our system and pre-authorized your credit card for the purchase. As soon as we receive your order, we automatically reach out to our suppliers to confirm that it is in stock and available for immediate shipment. If your item is on backorder or unavailable, we will void the pre-authorization and reach out to you via e-mail. If your item(s) are available for immediate shipment (within 5 business days), we will process the charges and submit the order for shipment.</p>
+<h4>Shipping</h4>
+<p>If your order is stock and we process the charges to your credit card, it will ship within five business days from the date of your order. We will send you tracking information within 24 hours of your order leaving the warehouse to the e-mail address your provide when checking out. If you do not receive tracking information from us within six business days of your order, feel free to follow up with us at orders@whatsupboards.com.</p>
+<h4>Cancellation &amp; Refunds</h4>
+<p>All orders cancelled after 48 hours are subject to a $20 administration fee, whether or not your order has shipped. If you order has shipped, you (the buyer) will also be responsible for actual return shipping charges. Refunds will only be issued to the original credit card that you use when placing your order.</p>
+<h4>Returns</h4>
+<p>If you are not 100% satisfied with your purchase, you can return the product and get a full refund or exchange the product for another one, be it similar or not. You can return a product for up to 30 days from the date you purchased it. Any product you return must be in the same condition you received it and in the original packaging. Please keep the receipt.</p> 
+  
+</div>
+
+<div id="tab3" class="tabcontent" style="display: none;">
+
+
+<p>We work very hard to ensure that we offer the absolute best prices online. &nbsp;If you find another online store that offers a lower price then us within six months of your purchase date please let us know and we will refund your&nbsp;original&nbsp;payment for the difference. &nbsp;We want you to feel confident that you are getting the absolute best price for the product you are ordering. &nbsp;If you find that our own website has a lower price for the same item you have ordered within six months of your purchase date will refund the difference as well.</p>
+<p>To request your partial refund simply e-mail us a link to the same product on our website, or on our competitors website within six months from the date of your order and we will process the credit accordingly.</p>
+<p>Our 100% Price Guarantee has some limitations:</p>
+<p>You must purchase the item from our website before requesting your Price Match Guarantee</p>
+<p>Promotions such as rebates and buy one, get one free offers are not&nbsp;eligible</p>
+<p>The item must be in stock on the competitors website</p>
+<p>The&nbsp;competitor&nbsp;must be an online store, they may not have a retail location</p>
+<p>The website can not be a discounter or auction website (ie; eBay, overstock, etc..)</p>
+<p>The compeitior must be an Authorized Retailer for the product in question</p>
+<p>The Price Match Guarantee includes the item price and the shipping charges, it excludes sales tax</p>
+  
+</div>
+
+<div id="tab4" class="tabcontent" style="display: none;">
+
+<p>We stand by the quality of our products and are confident that you will be satisfied with your purchase. If, for any reason, you are not happy with our products, we offer a 30-day money-back guarantee. Simply contact us by emailing info@levishe.com and we will process a refund for the full purchase price to the original payment method.</p>
+    
+</div>
+</div>
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+ 
+</script>
+
+
+
+2nd Tab Section
+============================
+ <style>
+    
+
+
+.container {
+  width:100%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.btn:hover{
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color:#fff;
+  border: none!important;
+}
+
+.sections {
+   background-color:#fff;
+}
+
+.content.active {
+  padding: 2rem;
+  display: block;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.content {
+  display: none;
+}
+ </style>
+ 
+ 
+  <div class="container">
+  <div class="tabs">
+    <button class="btn btn1 active" id="1">Section 1</button>
+    <button class="btn btn2" id="2">Section 2</button>
+    <button class="btn btn3" id="3">Section 3</button>
+     <button class="btn btn3" id="3">Section 3</button>
+  </div>
+  <div class="sections">
+    <div class="content content1 active">
+      <h2>Heading 1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis odit veritatis exercitationem molestiae quos qui! Similique ad eius a. Nihil, necessitatibus vitae. Fugit at atque odit rerum corporis, animi consequatur nemo explicabo numquam sunt ex iusto ad inventore sed enim.</p>
+    </div>
+    <div class="content content2">
+      <h2>Heading 2</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio necessitatibus incidunt voluptate nesciunt inventore aperiam, voluptas natus similique veritatis eveniet nisi minus itaque ratione rem vero, non totam, omnis autem quibusdam deserunt culpa porro sint ipsum. Deleniti quam officiis magni!</p>
+    </div>
+    <div class="content content3">
+      <h2>Heading 3</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit adipisci laborum labore iure eligendi autem et! Modi sequi, error consectetur pariatur dolores porro quibusdam quaerat tempora eligendi ex, molestias voluptatum at maiores nostrum et, voluptas culpa veniam omnis officia dicta.</p>
+    </div>
+  </div>
+</div>
+  
+  
+  
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+ const buttons = document.querySelectorAll("button");
+const sections = document.querySelectorAll(".content");
+
+
+buttons.forEach((btn)=>{
+  btn.addEventListener("click", ()=>{
+    buttons.forEach((btn)=>{
+      btn.classList.remove("active");
+    });
+    btn.classList.add("active");
+    const id = btn.id;
+    sections.forEach((section)=>{
+      section.classList.remove("active");
+    });
+    const req = document.getElementsByClassName(`content${id}`);
+    req[0].classList.add("active");
+  })
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
