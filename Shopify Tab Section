@@ -1,3 +1,90 @@
+Method: One
+
+<div class="product-single__description">
+          <div class="product-description">
+              	<ul class="tabs">
+                    <li><a href="#tab-1">{{ section.settings.description_title }}</a></li>
+                    <li><a href="#tab-2">{{ section.settings.review_title }}</a></li>
+                </ul>
+            
+                <div class="tab-container">
+                    <div id="tab-1">
+                      {{ product.description }}
+                    </div>
+                    <div id="tab-2">
+                      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
+                    </div>
+                </div>
+      	  </div>
+    </div> 
+
+<style>
+.tabs {
+    float: left;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 0;
+    margin: 0;
+    text-align: left;
+    padding-left: 0;
+}
+
+
+.tabs li {
+    display: inline-block;
+}
+
+.tabs li a {
+    display: block;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .6px;
+    border: 1px solid transparent;
+    border-radius: 5px 5px 0 0;
+}
+
+.tabs li a.active {
+    background: #000;
+    color: #fff;
+}
+
+</style>
+
+<script>
+
+  $(document).ready(function() {
+    $('.product-single__description ul.tabs').each(function() {
+        var active, content, links = $(this).find('a');
+        active = links.first().addClass('active');
+        content = $(active.attr('href'));
+        links.not(':first').each(function() {
+            $($(this).attr('href')).hide()
+        });
+        $(this).find('a').click(function(e) {
+            active.removeClass('active');
+            content.hide();
+            active = $(this);
+            content = $($(this).attr('href'));
+            active.addClass('active');
+            content.show();
+            return !1
+        })
+    })
+
+});
+</script>
+
+
+
+
+
+
+
+
+
 <style>
 .tabcontent ul {
   list-style: none;
